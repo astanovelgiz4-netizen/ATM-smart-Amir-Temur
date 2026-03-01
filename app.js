@@ -30,3 +30,33 @@ function App() {
 }
 
 export default App;
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Dashboard from './components/Dashboard';
+import Library from './components/Library';
+import Olympiad from './components/Olympiad';
+import Test from './components/Test';
+import Chat from './components/Chat';
+import Attendance from './components/Attendance';
+import Payments from './components/Payments';
+import Announcements from './components/Announcements';
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Dashboard">
+        <Stack.Screen name="Dashboard" component={Dashboard} />
+        <Stack.Screen name="Library" component={Library} />
+        <Stack.Screen name="Olympiad" component={Olympiad} />
+        <Stack.Screen name="Test" component={Test} />
+        <Stack.Screen name="Chat" component={Chat} />
+        <Stack.Screen name="Attendance" component={Attendance} />
+        <Stack.Screen name="Payments" component={Payments} />
+        <Stack.Screen name="Announcements" component={Announcements} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+  }
